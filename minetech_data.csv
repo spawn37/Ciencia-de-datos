@@ -1,0 +1,101 @@
+ID_Activo,Zona,Latitud,Longitud,Nivel_Riesgo,Valor_Activo,Estado
+ACT-1000,Relave,-16.54088,-71.55044,7,"$2,629,000",Alerta
+ACT-1001,Tajo Norte,-16.53355,-71.54897,6,"$1,632,000",Inactivo
+ACT-1002,Planta Proc.,-16.5387,-71.5547,4,"$2,320,000",Inactivo
+ACT-1003,Almacén,-16.53779,-71.55324,4,"$1,757,000",Mantenimiento
+ACT-1004,Almacén,-16.53903,-71.55746,8,"$4,983,000",Alerta
+ACT-1005,Tajo Norte,-16.54097,-71.55433,7,"$4,886,000",Alerta
+ACT-1006,Relave,-16.53279,-71.55251,1,"$1,006,000",Operativo
+ACT-1007,Almacén,-16.53773,-71.55292,5,"$3,004,000",Inactivo
+ACT-1008,Tajo Norte,-16.53204,-71.5537,5,"$3,425,000",Mantenimiento
+ACT-1009,Almacén,-16.53798,-71.55695,4,"$2,085,000",Operativo
+ACT-1010,Almacén,-16.54078,-71.55676,3,"$4,589,000",Operativo
+ACT-1011,Relave,-16.53287,-71.55381,5,"$3,308,000",Operativo
+ACT-1012,Tajo Norte,-16.54031,-71.55667,7,"$4,518,000",Alerta
+ACT-1013,Planta Proc.,-16.54187,-71.55251,1,"$698,000",Operativo
+ACT-1014,Tajo Norte,-16.53224,-71.55676,6,"$3,679,000",Alerta
+ACT-1015,Chancadora,-16.53822,-71.55037,1,"$2,769,000",Operativo
+ACT-1016,Chancadora,-16.53312,-71.54872,1,"$4,834,000",Operativo
+ACT-1017,Almacén,-16.53842,-71.5579,8,"$4,245,000",Alerta
+ACT-1018,Relave,-16.53683,-71.55781,3,"$2,952,000",Operativo
+ACT-1019,Tajo Sur,-16.54168,-71.54967,4,"$1,003,000",Alerta
+ACT-1020,Relave,-16.53513,-71.55128,5,"$3,384,000",Inactivo
+ACT-1021,Chancadora,-16.53565,-71.55795,2,"$2,949,000",Operativo
+ACT-1022,Planta Proc.,-16.54017,-71.55496,6,"$69,000",Operativo
+ACT-1023,Tajo Sur,-16.53858,-71.55573,6,"$4,651,000",Alerta
+ACT-1024,Tajo Sur,-16.53645,-71.5495,4,"$2,088,000",Alerta
+ACT-1025,Relave,-16.53421,-71.55764,3,"$1,073,000",Operativo
+ACT-1026,Almacén,-16.53849,-71.54912,6,"$400,000",Alerta
+ACT-1027,Tajo Norte,-16.53355,-71.55027,5,"$2,577,000",Inactivo
+ACT-1028,Tajo Sur,-16.53915,-71.55728,7,"$4,099,000",Alerta
+ACT-1029,Planta Proc.,-16.54119,-71.5569,1,"$3,115,000",Operativo
+ACT-1030,Planta Proc.,-16.53306,-71.55301,8,"$3,039,000",Alerta
+ACT-1031,Relave,-16.53214,-71.54801,7,"$4,235,000",Alerta
+ACT-1032,Relave,-16.53851,-71.55335,5,"$1,496,000",Crítico
+ACT-1033,Almacén,-16.54068,-71.54889,1,"$3,426,000",Operativo
+ACT-1034,Planta Proc.,-16.53855,-71.55764,8,"$4,242,000",Alerta
+ACT-1035,Chancadora,-16.53365,-71.5567,3,"$4,015,000",Operativo
+ACT-1036,Tajo Sur,-16.5386,-71.55138,4,"$2,793,000",Mantenimiento
+ACT-1037,Chancadora,-16.53854,-71.55534,4,"$3,370,000",Operativo
+ACT-1038,Chancadora,-16.53959,-71.55613,6,"$3,238,000",Crítico
+ACT-1039,Tajo Norte,-16.5338,-71.55096,9,"$2,134,000",Crítico
+ACT-1040,Almacén,-16.53877,-71.5494,4,"$2,848,000",Mantenimiento
+ACT-1041,Almacén,-16.53808,-71.55387,1,"$1,918,000",Operativo
+ACT-1042,Tajo Norte,-16.54022,-71.54966,5,"$2,532,000",Crítico
+ACT-1043,Tajo Norte,-16.53377,-71.55352,5,"$2,037,000",Operativo
+ACT-1044,Chancadora,-16.5358,-71.54969,7,"$1,150,000",Alerta
+ACT-1045,Relave,-16.54012,-71.55012,7,"$419,000",Alerta
+ACT-1046,Planta Proc.,-16.54072,-71.5575,5,"$90,000",Crítico
+ACT-1047,Planta Proc.,-16.53484,-71.54992,1,"$1,922,000",Operativo
+ACT-1048,Tajo Sur,-16.5411,-71.54822,8,"$2,424,000",Alerta
+ACT-1049,Planta Proc.,-16.53984,-71.54905,2,"$4,080,000",Operativo
+ACT-1050,Tajo Sur,-16.54019,-71.55059,2,"$4,349,000",Operativo
+ACT-1051,Almacén,-16.5398,-71.55364,5,"$1,741,000",Inactivo
+ACT-1052,Tajo Norte,-16.53306,-71.55178,5,"$492,000",Mantenimiento
+ACT-1053,Chancadora,-16.53252,-71.5484,2,"$291,000",Operativo
+ACT-1054,Planta Proc.,-16.53766,-71.54894,1,"$789,000",Operativo
+ACT-1055,Almacén,-16.53501,-71.55612,1,"$601,000",Operativo
+ACT-1056,Tajo Sur,-16.53916,-71.55231,7,"$1,574,000",Alerta
+ACT-1057,Chancadora,-16.5374,-71.55646,2,"$3,079,000",Operativo
+ACT-1058,Tajo Sur,-16.5356,-71.5577,1,"$4,994,000",Operativo
+ACT-1059,Tajo Sur,-16.53289,-71.55344,3,"$4,219,000",Operativo
+ACT-1060,Chancadora,-16.53576,-71.55733,8,"$1,545,000",Alerta
+ACT-1061,Tajo Sur,-16.54017,-71.55246,3,"$2,319,000",Operativo
+ACT-1062,Chancadora,-16.53719,-71.55044,1,"$3,746,000",Operativo
+ACT-1063,Almacén,-16.53685,-71.55398,6,"$211,000",Mantenimiento
+ACT-1064,Almacén,-16.53588,-71.55733,5,"$991,000",Inactivo
+ACT-1065,Relave,-16.53731,-71.54977,2,"$4,218,000",Operativo
+ACT-1066,Almacén,-16.53896,-71.55075,1,"$1,177,000",Operativo
+ACT-1067,Planta Proc.,-16.54094,-71.54819,6,"$1,542,000",Mantenimiento
+ACT-1068,Relave,-16.53291,-71.55147,2,"$3,781,000",Operativo
+ACT-1069,Planta Proc.,-16.53305,-71.54821,2,"$3,981,000",Operativo
+ACT-1070,Planta Proc.,-16.53435,-71.54947,4,"$4,528,000",Crítico
+ACT-1071,Tajo Sur,-16.54024,-71.5502,8,"$3,801,000",Alerta
+ACT-1072,Planta Proc.,-16.53419,-71.55556,1,"$4,982,000",Operativo
+ACT-1073,Chancadora,-16.53279,-71.55697,1,"$1,005,000",Operativo
+ACT-1074,Planta Proc.,-16.53305,-71.55089,2,"$1,572,000",Operativo
+ACT-1075,Almacén,-16.53896,-71.55038,5,"$131,000",Inactivo
+ACT-1076,Relave,-16.53642,-71.55731,6,"$3,533,000",Inactivo
+ACT-1077,Planta Proc.,-16.53329,-71.54966,4,"$2,451,000",Mantenimiento
+ACT-1078,Chancadora,-16.53545,-71.55352,1,"$1,679,000",Operativo
+ACT-1079,Tajo Sur,-16.54084,-71.55383,1,"$2,594,000",Operativo
+ACT-1080,Planta Proc.,-16.54059,-71.5545,4,"$2,029,000",Inactivo
+ACT-1081,Chancadora,-16.53584,-71.55216,3,"$3,823,000",Operativo
+ACT-1082,Chancadora,-16.53678,-71.55572,2,"$4,926,000",Operativo
+ACT-1083,Chancadora,-16.53946,-71.54934,4,"$4,532,000",Alerta
+ACT-1084,Planta Proc.,-16.53815,-71.5494,8,"$1,215,000",Alerta
+ACT-1085,Tajo Sur,-16.53276,-71.55421,8,"$2,296,000",Alerta
+ACT-1086,Relave,-16.54167,-71.5487,8,"$1,370,000",Alerta
+ACT-1087,Tajo Sur,-16.53232,-71.55178,8,"$3,413,000",Alerta
+ACT-1088,Tajo Norte,-16.53969,-71.55367,9,"$2,427,000",Crítico
+ACT-1089,Tajo Sur,-16.54015,-71.54872,5,"$4,088,000",Crítico
+ACT-1090,Planta Proc.,-16.53526,-71.55036,1,"$3,593,000",Operativo
+ACT-1091,Chancadora,-16.53332,-71.55021,4,"$1,891,000",Operativo
+ACT-1092,Almacén,-16.54031,-71.54806,8,"$3,602,000",Alerta
+ACT-1093,Tajo Sur,-16.54086,-71.5498,2,"$501,000",Operativo
+ACT-1094,Tajo Sur,-16.53409,-71.55304,4,"$3,782,000",Mantenimiento
+ACT-1095,Planta Proc.,-16.53753,-71.55327,5,"$2,808,000",Crítico
+ACT-1096,Planta Proc.,-16.53996,-71.55318,4,"$4,836,000",Operativo
+ACT-1097,Almacén,-16.54083,-71.55034,5,"$1,365,000",Inactivo
+ACT-1098,Planta Proc.,-16.53301,-71.55114,8,"$2,949,000",Alerta
+ACT-1099,Tajo Sur,-16.54068,-71.55773,5,"$1,874,000",Inactivo
