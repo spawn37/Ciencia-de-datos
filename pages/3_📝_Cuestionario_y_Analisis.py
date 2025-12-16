@@ -1,70 +1,69 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import numpy as np
 
-st.set_page_config(page_title="Cuestionario y Análisis", page_icon="📝", layout="wide")
+st.set_page_config(page_title="Encuesta y Análisis", page_icon="📝", layout="wide")
 
-st.title("📝 Evaluación y Análisis del Conocimiento")
+st.title("📝 Encuesta: Cultura de Datos")
+st.markdown("Analizando la percepción del valor del dato en tiempo real.")
 
-tab1, tab2 = st.tabs(["✍️ Responder Examen", "📈 Dashboard de Resultados"])
+# --- ⚠️ AQUÍ PEGA TU LINK CSV DE GOOGLE SHEETS ---
+# Recuerda: Archivo > Compartir > Publicar en la web > Formato CSV
+ruta_google_sheet = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRKP0h7uVxy0hBy71cidt6-GYYoJUFeCMF3kXfBLABFFpthoonuVLdnpUXBoG5p14CwY3BZqC6JqRop/pub?output=csv"
 
-# --- TAB 1: EL EXAMEN ---
-with tab1:
-    st.subheader("Test: El Dato como Activo")
+# Link para que tus compañeros respondan
+url_formulario = "https://docs.google.com/forms/d/e/1FAIpQLSfAbgTAQVA9-98CRdr_08sWgejW5PetocsqNCgPdJMjOn0TlA/viewform?usp=header"
+
+# --- BOTÓN PARA IR AL FORMULARIO ---
+st.info("📊 Este dashboard muestra estadísticas de opinión (Escala 1-5).")
+if st.button("✍️ Ir a responder la encuesta en Google Forms"):
+    st.markdown(f"[Haz clic aquí para abrir el formulario]({url_formulario})", unsafe_allow_html=True)
+
+# --- CARGA DE DATOS ---
+try:
+    df = pd.read_csv(ruta_google_sheet)
     
-    with st.form("examen_form"):
-        p1 = st.radio("1. ¿Diferencia entre dato e información?", 
-                     ["Sin diferencia", "Dato es materia prima, información tiene contexto", "Información son números"])
-        
-        p2 = st.radio("2. ¿Qué es Gobernanza de Datos?", 
-                     ["Políticas de calidad y seguridad", "Un software antivirus", "Gobierno de internet"])
-        
-        p3 = st.radio("3. ¿Por qué el dato es un activo?", 
-                     ["Porque ocupa espacio", "Porque genera valor económico al procesarse", "Porque es bonito"])
-        
-        p4 = st.selectbox("4. ¿Herramienta clave para visualización?", ["Word", "Excel 97", "Dashboards Dinámicos"])
-        
-        submitted = st.form_submit_button("Enviar Respuestas")
-        
-        if submitted:
-            nota = 0
-            if p1 == "Dato es materia prima, información tiene contexto": nota += 5
-            if p2 == "Políticas de calidad y seguridad": nota += 5
-            if p3 == "Porque genera valor económico al procesarse": nota += 5
-            if p4 == "Dashboards Dinámicos": nota += 5
-            
-            if nota == 20:
-                st.success(f"¡Excelente! Nota: {nota}/20. Dominas el tema.")
-                st.balloons()
-            else:
-                st.warning(f"Tu nota es: {nota}/20. Revisa el Dashboard de Resultados para ver estadísticas.")
+    # Renombrar columnas largas (P1, P2... etc)
+    # Asumimos que la columna 0 es 'Marca temporal', empezamos desde la 1
+    columnas_nuevas = {col: f"P{i}" for i, col in enumerate(df.columns) if i > 0}
+    df.rename(columns=columnas_nuevas, inplace=True)
 
-# --- TAB 2: EL DASHBOARD DEL CUESTIONARIO ---
-with tab2:
-    st.subheader("📊 Análisis de Resultados del Grupo MineTech")
-    st.markdown("Este dashboard analiza el rendimiento de **50 estudiantes** que ya tomaron la prueba.")
+except:
+    st.warning("⚠️ Aún no se han cargado datos o el enlace CSV no es correcto.")
+    st.stop()
+
+# --- DASHBOARD (SOLO SI HAY DATOS) ---
+if not df.empty:
+    st.divider()
     
-    # Simulación de datos de resultados (Mock Data)
-    data_resultados = pd.DataFrame({
-        'Estudiante': [f'Est-{i}' for i in range(50)],
-        'Nota': np.random.randint(10, 21, 50), # Notas entre 10 y 20
-        'Tiempo_minutos': np.random.randint(5, 15, 50),
-        'Pregunta_Mas_Dificil': np.random.choice(['Definición Dato', 'Gobernanza', 'KPIs', 'Big Data'], 50)
-    })
+    # 1. KPIs Simples
+    total = len(df)
+    # Calculamos el promedio de todas las columnas numéricas (las respuestas 1-5)
+    cols_numericas = df.select_dtypes(include=['number']).columns
+    promedio_global = df[cols_numericas].mean().mean()
     
-    # KPIs del Examen
-    colA, colB, colC = st.columns(3)
-    colA.metric("Promedio del Aula", f"{data_resultados['Nota'].mean():.1f}/20")
-    colB.metric("Tasa de Aprobación", f"{len(data_resultados[data_resultados['Nota']>=14]) / 50 * 100:.0f}%")
-    colC.metric("Tiempo Promedio", "8.5 min")
-    
-    # Gráficos
     c1, c2 = st.columns(2)
-    with c1:
-        fig_hist = px.histogram(data_resultados, x="Nota", nbins=5, title="Distribución de Notas", color_discrete_sequence=['#00CC96'])
-        st.plotly_chart(fig_hist, use_container_width=True)
-        
-    with c2:
-        fig_pie = px.pie(data_resultados, names='Pregunta_Mas_Dificil', title="Temas con mayor dificultad")
-        st.plotly_chart(fig_pie, use_container_width=True)
+    c1.metric("👥 Total Encuestados", total)
+    c2.metric("⭐ Promedio General de Acuerdo", f"{promedio_global:.1f} / 5.0")
+
+    st.markdown("### 📊 Resultados por Pregunta (Escala de Acuerdo)")
+    
+    # 2. Gráfico de Barras Horizontal
+    # Calculamos el promedio de cada pregunta
+    promedios_por_pregunta = df[cols_numericas].mean().reset_index()
+    promedios_por_pregunta.columns = ['Pregunta', 'Promedio']
+    
+    # Graficamos
+    fig = px.bar(promedios_por_pregunta, x='Promedio', y='Pregunta', orientation='h',
+                 title="¿Qué tan de acuerdo están los encuestados? (1=Desacuerdo, 5=Acuerdo)",
+                 range_x=[1, 5], text_auto='.1f',
+                 color='Promedio', color_continuous_scale='Blues')
+    
+    st.plotly_chart(fig, use_container_width=True)
+    
+    # 3. Tabla de datos al final
+    with st.expander("Ver tabla de respuestas completa"):
+        st.dataframe(df)
+
+else:
+    st.info("Esperando la primera respuesta...")
