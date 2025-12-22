@@ -1,4 +1,5 @@
 import streamlit as st
+from PIL import Image # <-- AGREGAMOS ESTA IMPORTACIÓN
 
 st.set_page_config(page_title="Presentación del Proyecto", page_icon="📢", layout="wide")
 
@@ -32,11 +33,17 @@ st.markdown("---")
 # --- CONTENIDO ---
 slide = st.session_state.slide
 
+# === CORRECCIÓN AQUÍ EN LA DIAPOSITIVA 1 ===
 if slide == 1:
     st.header("1. Portada")
-    # CORRECCIÓN: Usamos una imagen directa y estable (Mina Escondida - Chile)
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Escondida_Mine_in_Chile.jpg/800px-Escondida_Mine_in_Chile.jpg", 
-             caption="Minería a Gran Escala", use_container_width=True)
+    try:
+        # Intentamos abrir la imagen local
+        img_portada = Image.open("portada_ppt.jpg")
+        st.image(img_portada, caption="Minería a Gran Escala y Datos", use_container_width=True)
+    except FileNotFoundError:
+        # Si te olvidaste de guardar la foto, saldrá este aviso
+        st.warning("⚠️ Falta el archivo 'portada_ppt.jpg' en la carpeta Minetech.")
+        st.info("Por favor descarga una imagen de mina, guárdala con ese nombre y sube los cambios a GitHub.")
     
     st.markdown("""
     ### **Tema: El Dato como Activo Estratégico**
@@ -45,6 +52,7 @@ if slide == 1:
     * Eduardo Ismael Trujillo Catacora
     * Aldair Alberto Yana Tamayo
     """)
+# ===========================================
 
 elif slide == 2:
     st.header("2. Dato vs. Información")
