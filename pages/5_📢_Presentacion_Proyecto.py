@@ -38,7 +38,7 @@ if slide == 1:
     st.header("1. Portada")
     try:
         # Intentamos abrir la imagen local
-        img_portada = Image.open("portada_ppt.jpg")
+        img_portada = Image.open("portada_ppt.JPG")
         st.image(img_portada, caption="Minería a Gran Escala y Datos", use_container_width=True)
     except FileNotFoundError:
         # Si te olvidaste de guardar la foto, saldrá este aviso
