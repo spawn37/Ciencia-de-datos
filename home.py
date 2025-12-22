@@ -25,41 +25,58 @@ with col1:
     * **📍 Mapa de Riesgos:** Visualización geoespacial de activos.
     * **📊 Dashboard Operativo:** Análisis de KPIs en tiempo real.
     * **📝 Cuestionario:** Evaluación de conocimientos con análisis de resultados.
+    * **💰 Precios Metales:** Monitoreo financiero en vivo.
     """)
     st.info("💡 'Lo que no se mide, no se puede mejorar'.")
 
 with col2:
-    # Puedes poner una imagen de una mina o logo aquí si quieres
     st.markdown("### 🏢 Minería 4.0")
+    st.caption("Facultad de Ingeniería de Minas - VIII Semestre")
 
 st.markdown("---")
 
 # Sección Biografías
 st.subheader("👥 Nuestro Equipo")
+st.markdown("Estudiantes del VIII Semestre de la Facultad de Ingeniería de Minas.")
 
 col_edu, col_ald = st.columns(2)
 
+# --- BIOGRAFÍA DE EDUARDO ---
 with col_edu:
     try:
         img_edu = Image.open("foto_eduardo.jpg")
-        st.image(img_edu, width=200, caption="Eduardo Ismael Trujillo Catacora")
+        # Mostramos la imagen con borde redondeado (simulado) y ancho controlado
+        st.image(img_edu, width=200)
     except:
         st.warning("Falta la foto 'foto_eduardo.jpg'")
     
-    st.markdown("**Eduardo Ismael Trujillo Catacora**")
-    st.markdown("*Especialista en Ciencia de Datos*")
-    st.caption("Encargado de la arquitectura de datos y modelamiento predictivo para la optimización de activos mineros.")
+    st.markdown("### Eduardo Ismael Trujillo Catacora")
+    st.markdown("**Estudiante de Ingeniería de Minas (VIII Semestre)**")
+    
+    # Datos personales con iconos
+    st.write("📍 **Origen:** Puno")
+    st.write("🎂 **Nacimiento:** 13/11/2003")
+    
+    # Meta profesional en un recuadro de color
+    st.success("🎯 **Meta Profesional:** Convertirse en Especialista en Ciencia de Datos aplicada a la minería.")
 
+# --- BIOGRAFÍA DE ALDAIR ---
 with col_ald:
     try:
         img_ald = Image.open("foto_aldair.jpg")
-        st.image(img_ald, width=200, caption="Aldair Alberto Yana Tamayo")
+        st.image(img_ald, width=200)
     except:
         st.warning("Falta la foto 'foto_aldair.jpg'")
         
-    st.markdown("**Aldair Alberto Yana Tamayo**")
-    st.markdown("*Analista de Riesgos y Sistemas*")
-    st.caption("Especialista en la implementación de dashboards operativos y estrategias de seguridad industrial.")
+    st.markdown("### Aldair Alberto Yana Tamayo")
+    st.markdown("**Estudiante de Ingeniería de Minas (VIII Semestre)**")
+    
+    # Datos personales
+    st.write("📍 **Origen:** Juliaca")
+    st.write("🎂 **Nacimiento:** 26/02/2003")
+    
+    # Meta profesional
+    st.info("🎯 **Meta Profesional:** Convertirse en Analista de Riesgos y Sistemas en el sector extractivo.")
 
 st.markdown("---")
 st.caption("© 2025 MineTech - Proyecto de Ciencia de Datos")
